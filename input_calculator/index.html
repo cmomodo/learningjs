@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css"> <!--Links the stylesheet to the html page. -->
+    <script>  <!-- the javascript file in the html -->
+        function calc() { //the function that does the calculation.
+            let n1 = parseFloat(document.getElementById('n1').value); //gets the element id of input 1
+            let n2 = parseFloat(document.getElementById('n2').value);
+            let n3 = parseFloat(document.getElementById('n3').value); // get the element id of input 2.
+            let open = document.getElementById('operators').value; // gets the element id of the input operator.
+
+            if(open === '+'){ //values passed in by the operators.
+                document.getElementById('result').value = n1+n2;
+            }
+            if(open === '-'){ //if equals to that then we submit it.
+                document.getElementById('result').value = n1-n2;
+            }
+            if(open === 'X'){ // does the multiplication.
+                document.getElementById('result').value = n1*n2;
+            }
+            if(open === '/'){ //does the division
+                document.getElementById('result').value = n1/n2;
+            }if(open === '^'){ //does the division
+                document.getElementById('result').value = n3 * n3; //The power of a number.
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="n1"/><br /><br/> <!-- takes input 1 -->
+    <input type="text" id="n2"/><br /><br/> <!-- takes the second input. -->
+    <input type="button" value="Exponent Below"/><br /><br/>
+    <input type="text" id="n3"/><br /><br/>
+
+    <select id="operators"> <! -- these are the operator choices given. -->
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="X">*</option>
+        <option value="/">/</option>
+        <option value="^">^</option>
+    </select>
+    <button onClick="calc();">=</button> <!-- a click event happens that gives us the answer. -->
+    <input type="text" id="result"> <!-- the result returns the value. -->
+
+
+
+</body>
+</html>
